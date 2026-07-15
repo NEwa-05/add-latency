@@ -1,0 +1,11 @@
+displayName: Add latency plugin
+type: middleware
+iconPath: .assets/icon.png
+
+import: github.com/NEwa-05/add-latency
+
+summary: 'Add Latency to traefik processing'
+
+testData:
+  add-latency:
+    addedLatency: 30

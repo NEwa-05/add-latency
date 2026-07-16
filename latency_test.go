@@ -1,4 +1,4 @@
-package latency
+package addlatency_test
 
 import (
 	"context"
@@ -6,17 +6,19 @@ import (
 	"net/http/httptest"
 	"testing"
 	"time"
+
+	"github.com/NEwa-05/addlatency"
 )
 
 func TestLatency(t *testing.T) {
 	startTime := time.Now().Second()
-	cfg := CreateConfig()
+	cfg := addlatency.CreateConfig()
 	cfg.AddedLatency = 10
 
 	ctx := context.Background()
 	next := http.HandlerFunc(func(rw http.ResponseWriter, req *http.Request) {})
 
-	handler, err := New(ctx, next, cfg, "latency")
+	handler, err := addlatency.New(ctx, next, cfg, "latency")
 	if err != nil {
 		t.Fatal(err)
 	}

@@ -1,5 +1,5 @@
 // Package latency
-package latency
+package addlatency
 
 import (
 	"context"

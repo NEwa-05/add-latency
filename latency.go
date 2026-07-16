@@ -1,4 +1,4 @@
-// Package latency
+// Package addlatency
 package addlatency
 
 import (
